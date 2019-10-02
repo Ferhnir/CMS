@@ -71148,7 +71148,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuetify__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vuetify__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _fortawesome_fontawesome_free_css_all_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/fontawesome-free/css/all.css */ "./node_modules/@fortawesome/fontawesome-free/css/all.css");
 /* harmony import */ var _fortawesome_fontawesome_free_css_all_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_css_all_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_NavDrawer_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/NavDrawer.vue */ "./resources/js/components/NavDrawer.vue");
+/* harmony import */ var _icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./icons */ "./resources/js/icons.js");
+/* harmony import */ var _components_NavDrawer_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/NavDrawer.vue */ "./resources/js/components/NavDrawer.vue");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
@@ -71156,50 +71157,20 @@ window.$store = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.e
 
 
 Vue.use(vuex__WEBPACK_IMPORTED_MODULE_0__["default"]);
- //v-click-outside directive
-// import vClickOutside from 'v-click-outside';
-// Vue.use(vClickOutside);
-//vuetify
+ //vuetify
 
 
  // Ensure you are using css-loader
-// import 'roboto-fontface/css/roboto/roboto-fontface.css'
+
+ // import 'roboto-fontface/css/roboto/roboto-fontface.css'
 
 Vue.use(vuetify__WEBPACK_IMPORTED_MODULE_2___default.a);
 
-var opts = {
-  icons: {
-    iconfont: 'fa4',
-    values: {
-      menu: 'fas fa-bars',
-      objective: 'fas fa-bullseye',
-      boxes: 'fas fa-boxes',
-      coins: 'fas fa-coins',
-      phone: 'fas fa-phone',
-      star: 'fas fa-star',
-      fb: 'fab fa-facebook-f',
-      yt: 'fab fa-youtube',
-      envelope: 'fas fa-envelope',
-      clock: 'far fa-clock',
-      anchor: 'fas fa-anchor',
-      heart: 'far fa-heart',
-      mobile: 'fas fa-mobile-alt',
-      calendar: 'far fa-calendar-alt',
-      comments: 'fas fa-comments',
-      whatsapp: 'fab fa-whatsapp',
-      check: 'fas fa-check-circle',
-      question: 'fas-fa-question-circle',
-      next: 'fas fa-arrow-right',
-      prev: 'fas fa-arrow-left',
-      edit: 'fas fa-pen-square'
-    }
-  }
-};
 var app = new Vue({
   store: _store_js__WEBPACK_IMPORTED_MODULE_1__["default"],
-  vuetify: new vuetify__WEBPACK_IMPORTED_MODULE_2___default.a(opts),
+  vuetify: new vuetify__WEBPACK_IMPORTED_MODULE_2___default.a(_icons__WEBPACK_IMPORTED_MODULE_4__["default"]),
   components: {
-    NavigationDrawer: _components_NavDrawer_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+    NavigationDrawer: _components_NavDrawer_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
   },
   el: '#app',
   methods: {
@@ -71334,6 +71305,49 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NavDrawer_vue_vue_type_template_id_74470fce___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/icons.js":
+/*!*******************************!*\
+  !*** ./resources/js/icons.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var opts = {
+  icons: {
+    iconfont: 'fa4',
+    values: {
+      menu: 'fas fa-bars',
+      objective: 'fas fa-bullseye',
+      boxes: 'fas fa-boxes',
+      coins: 'fas fa-coins',
+      phone: 'fas fa-phone',
+      star: 'fas fa-star',
+      fb: 'fab fa-facebook-f',
+      yt: 'fab fa-youtube',
+      envelope: 'fas fa-envelope',
+      clock: 'far fa-clock',
+      anchor: 'fas fa-anchor',
+      heart: 'far fa-heart',
+      mobile: 'fas fa-mobile-alt',
+      calendar: 'far fa-calendar-alt',
+      comments: 'fas fa-comments',
+      whatsapp: 'fab fa-whatsapp',
+      check: 'fas fa-check-circle',
+      question: 'fas-fa-question-circle',
+      next: 'fas fa-arrow-right',
+      prev: 'fas fa-arrow-left',
+      edit: 'fas fa-pen-square'
+    }
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = ({
+  opts: opts
+});
 
 /***/ }),
 

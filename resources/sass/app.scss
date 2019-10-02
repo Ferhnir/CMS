@@ -1,1 +1,56 @@
 @import '~vuetify/dist/vuetify.min.css';
+@import 'variables';
+
+
+.bg-dark-mb {
+    background-color: inherit;
+}
+.navbar-light-mb,
+.theme--dark.v-btn {
+    color: $base-text-color !important;
+}
+
+.toolbar {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.parallax {
+    height: 100vh !important;
+}
+
+.v-parallax__content {    
+    background-color: $shadow-bg-color
+}
+
+.v-parallax__image {
+    top: -40% !important;
+    bottom: none !important;
+}
+
+.intro-text,
+.subheading {
+    color: #FDD247;    
+    font-family: Roboto, sans-serif;
+}
+
+.intro-text {
+    font-size: 70px;
+    font-stretch: 100%;
+    font-weight: bold;
+    line-height: 80px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.theme--light.v-btn {
+    color: black;
+    background-color: #FDD247 !important;    
+}
+
+@media (max-width: 430px) {
+    .claim-btn-intro {
+        font-size: 10px !important;
+    }
+}

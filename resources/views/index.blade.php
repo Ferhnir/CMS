@@ -14,12 +14,15 @@
         <!-- Styles -->
         <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+        <link href="css/app.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
         
     </head>
     <body>
         <v-app id="app">
-            <v-btn primary>Material Button</v-btn>
+            @include('partials.navbar.navbar')
+            @include('subpages.intro')
+            
         </v-app>
         <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js"></script>
         <script type="text/javascript" src="js/app.js"></script>

@@ -22,7 +22,9 @@ const opts = {
         question: 'fas-fa-question-circle',
         next: 'fas fa-arrow-right',
         prev: 'fas fa-arrow-left',
-        edit: 'fas fa-pen-square'
+        edit: 'fas fa-pen-square',
+        googlemap: 'far fa-map',
+        closecross: 'fas fa-times'
       }
     }
   }

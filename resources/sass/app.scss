@@ -1,21 +1,47 @@
 @import '~vuetify/dist/vuetify.min.css';
 @import 'variables';
 
-
-.bg-dark-mb {
-    background-color: inherit;
+/* ======== general */
+/* == background == */
+.bg-b {
+    background-color: $c-black !important;
 }
-.navbar-light-mb,
-.theme--dark.v-btn {
-    color: $base-text-color !important;
-}
-
-.toolbar {
-    position: fixed;
-    top: 0;
-    z-index: 1;
+.bg-y {
+    background-color: $c-yellow !important;
 }
 
+/* == text == */ 
+.text-y,
+.text-w,
+.text-b {
+    font-family: Roboto, sans-serif;
+}
+
+.text-y {
+    color: $c-yellow !important;    
+
+}
+
+.text-b {
+    color: $c-black !important;    
+}
+
+.text-w {
+    color: $c-white !important;    
+}
+
+.theme--light.v-card {
+    border: 1px solid black !important;
+}
+
+.gap-50-top {
+    margin-top: 50px !important;
+}
+.gap-50-bottom {
+    margin-bottom: 50px !important;
+}
+
+/* intro parallax */
 .parallax {
     height: 100vh !important;
 }
@@ -29,12 +55,26 @@
     bottom: none !important;
 }
 
-.intro-text,
-.subheading {
-    color: #FDD247;    
-    font-family: Roboto, sans-serif;
+/* navbar */ 
+.navbar-light-mb,
+.theme--dark.v-btn {
+    color: $base-text-color !important;
 }
 
+.toolbar {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+/* buttons */
+.bttn-bg-pink {
+    background-color: #EF5240 !important;
+    color: #000 !important;
+}
+
+/***************** PAGES ***************/
+/* INTRO */
 .intro-text {
     font-size: 70px;
     font-stretch: 100%;
@@ -44,13 +84,55 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.theme--light.v-btn {
-    color: black;
-    background-color: #FDD247 !important;    
-}
-
 @media (max-width: 430px) {
     .claim-btn-intro {
         font-size: 10px !important;
     }
 }
+
+/* YOUR OBJECTIVE */
+.your-obj-layout, 
+.card-list {
+    max-width: 1000px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.bg-b > * {
+        color: $c-yellow !important;    
+}
+
+.bg-y > * {
+        color: $c-black !important;
+}
+
+/* CUSTOM COACHING */
+.boxm {
+    display: block;
+}
+
+@media (max-width: 600px) {
+    #CustomizedCoaching {
+        height: 70vh;
+    }
+
+    .boxm {
+        text-align: center
+    }
+
+    .boxm .display-1 {
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 601px) {
+    #CustomizedCoaching {
+        height: 65vh;
+    }
+
+    .boxm {        
+        width:50%;
+        text-align: right;
+        margin-right: 100px;
+    }
+}  

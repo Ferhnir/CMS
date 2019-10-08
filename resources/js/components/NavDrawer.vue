@@ -107,7 +107,7 @@ export default {
                 { name: 'Email', icon: '$vuetify.icons.envelope', color: 'white', bg: '#2A73C5'}
             ],
             contact: [
-                { icon: '$vuetify.icons.mobile', details: '+447366911226' },
+                { icon: '$vuetify.icons.mobile', details: '+44 73 66 911 226' },
                 { icon: '$vuetify.icons.calendar', details: 'Monday - Friday' },
                 { icon: '$vuetify.icons.clock', details: '6:00 - 20:00' },
             ]

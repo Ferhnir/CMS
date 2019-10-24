@@ -8,11 +8,10 @@
                 <h4 class="subheading text-y py-2 my-2">
                     WE ARE NOT THE SHOUTING TYPE, WE RATHER YOU TEST US BELOW
                 </h4>
-                <v-btn light rounded class="bg-y"
-                    {{-- @click="setContactDialogState(true)" --}}
-                >
+                <v-btn light rounded class="bg-y" v-on:click="showFiveWeekQuestionareNavDrawer(true)">
                     CLAIM YOUR YOUR FREE 5 DAY CLARITY CONSULT
                 </v-btn>
             </v-layout>
         </v-parallax>
+        <five-week-questionare/> 
     </v-content>

@@ -64,6 +64,21 @@ class PageController extends Controller
                 ],
             'icons' => [
                 'googlemaps' => '$vuetify.icons.googlemaps'
+            ],
+            'lockYourTime' => [
+                'header' => 'Get a chance to lock your time and rates now!',
+                'list' => [
+                    'This month only! 25% off',
+                    '3 amazing Membership Packages available',
+                    'A Free 5 Day Clarity Consult as standard',
+                    '100% Money back on all Memberships',
+                    'Fully insured and qualified coaches',
+                    'Personalized Blogs',
+                    'Fully insured and Qualified Coaches',
+                    'Monthly Prize Draws',
+                    '2 Free Personal Coaching for Family and Friends',
+                    'And many more goodies'
+                ]
             ]
         ]);
     }    

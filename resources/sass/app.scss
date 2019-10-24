@@ -10,6 +10,10 @@
     background-color: $c-yellow !important;
 }
 
+.bg-none {
+    background-color: none !important;
+}
+
 /* == text == */ 
 .text-y,
 .text-w,
@@ -34,6 +38,10 @@
     border: 1px solid black !important;
 }
 
+.gap-20-top {
+    margin-top: 20px !important;
+}
+
 .gap-50-top {
     margin-top: 50px !important;
 }
@@ -52,6 +60,11 @@
 
 .v-parallax__image {
     top: -40% !important;
+    bottom: none !important;
+}
+
+#CustomizedCoaching .v-parallax__image {
+    top: -20% !important;
     bottom: none !important;
 }
 
@@ -113,7 +126,7 @@
 
 @media (max-width: 600px) {
     #CustomizedCoaching {
-        height: 70vh;
+        height: 100vh;
     }
 
     .boxm {
@@ -127,7 +140,7 @@
 
 @media (min-width: 601px) {
     #CustomizedCoaching {
-        height: 65vh;
+        height: 100vh;
     }
 
     .boxm {        
@@ -136,3 +149,85 @@
         margin-right: 100px;
     }
 }  
+
+/* lockYourTime */
+#lockYourTime{
+    height: 100vh;
+    background-image: url('/images/IMG_20191015_050852.jpg');
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: auto;
+}
+
+.bg-blue-opacity-low {
+    height: 100vh;       
+    background-color: rgba(6, 51, 96, 0.8);
+}
+
+@media (max-width: 600px) {
+    #lockYourTime,
+    .bg-blue-opacity-low{
+        height: 110vh;
+    }
+}
+#getFitStayConnected {
+    height: 100vh;
+} 
+
+/* FOOTER */
+// #footer {
+//     height: 100vh;
+// }
+
+/* loader */
+.loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: $c-black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid $c-yellow;
+    animation: loader 2s infinite ease;
+  }  
+
+  .loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: $c-yellow;
+    animation: loader-inner 2s infinite ease-in;
+  }
+  
+
+  .loaded {
+      transition: 0.5s;
+      z-index: -1000;
+      opacity: 0;
+  }
+
+  @keyframes loader {
+    0% { transform: rotate(0deg);}
+    25% { transform: rotate(180deg);}
+    50% { transform: rotate(180deg);}
+    75% { transform: rotate(360deg);}
+    100% { transform: rotate(360deg);}
+  }
+  @keyframes loader-inner {
+    0% { height: 0%;}
+    25% { height: 0%;}
+    50% { height: 100%;}
+    75% { height: 100%;}
+    100% { height: 0%;}
+  }

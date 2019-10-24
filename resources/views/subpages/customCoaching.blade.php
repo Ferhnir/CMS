@@ -1,4 +1,5 @@
 <v-content id="CustomizedCoaching">
+    <v-parallax dark src="{{ asset('/images/your-goal.jpg') }}" class="parallax">
         <v-layout>
             <v-flex>
                 <div style="height: 350px;">
@@ -16,10 +17,11 @@
         <v-layout py-5>
             <v-flex>
                 <v-layout column align-center>
-                    <v-btn large color="pink" class="text-w" @click="">
+                    <v-btn large color="yellow" class="text-b" v-on:click="showFiveWeekQuestionareNavDrawer(true)">
                         Get your qutoe today!
                     </v-btn>
                 </v-layout>
             </v-flex>
         </v-layout>
-    </v-content>
+    </v-parallax>
+</v-content>

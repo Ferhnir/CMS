@@ -14,10 +14,16 @@
         <!-- Styles -->
         <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
         <link href="css/app.css" rel="stylesheet">
+        <link href="css/all.min.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
         
     </head>
     <body>
+        <div id="loader" class="loader-wrapper">
+            <span class="loader">
+                <span class="loader-inner"></span>
+            </span>
+        </div>
         <v-app id="app">
             {{-- NAVBAR AND NAVDRAWER --}}
             @include('partials.navbar.navbar')
@@ -29,9 +35,16 @@
             @include('subpages.testimoniales')
             @include('subpages.customCoaching')
             @include('subpages.contactMe')
+            @include('subpages.lockYourTime')
+            @include('subpages.getFitStayConnected')
+            {{-- FOOTER --}}
+            @include('partials.footer')
+                       
+            
             
         </v-app>
         <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
+
     </body>
 </html>

@@ -11,21 +11,15 @@
             <v-list nav dense>
                 <v-list-item two-line>
                     <v-list-item-avatar>
-                        <!-- <img src="@/assets/img/ben_profile_pic.jpg"> -->
+                        <img :src="benProfileAvatar">
                     </v-list-item-avatar>
                     <v-list-item-content>
                         <v-list-item-title>Ben</v-list-item-title>
                         <v-list-item-subtitle>Proffesional coach</v-list-item-subtitle>
                     </v-list-item-content>
-
-                </v-list-item>
-                
+                </v-list-item>                
                 <v-divider></v-divider>
-
-                <v-list
-                    dense
-                    nav
-                    >
+                <v-list dense nav>
                     <v-list-item
                         v-for="item in menus"
                         :key="item.name"
@@ -82,6 +76,7 @@ import vClickOutside from 'v-click-outside'
 
 export default {
     name: 'NavDrawer',
+    props: ['benProfileAvatar'],
     directives: {
       clickOutside: vClickOutside.directive
     },
@@ -103,8 +98,7 @@ export default {
             ],
             media: [
                 { name: 'Facebook', icon: '$vuetify.icons.fb', color: 'white', bg: '#4267B2' },
-                { name: 'Youtube', icon: '$vuetify.icons.yt', color: 'red', bg: 'white' },
-                { name: 'Email', icon: '$vuetify.icons.envelope', color: 'white', bg: '#2A73C5'}
+                { name: 'Youtube', icon: '$vuetify.icons.yt', color: 'red', bg: 'white' }
             ],
             contact: [
                 { icon: '$vuetify.icons.mobile', details: '+44 73 66 911 226' },

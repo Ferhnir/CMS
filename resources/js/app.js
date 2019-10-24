@@ -1,7 +1,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
-window.$store = require('vuex')
+window.$store = require('vuex');
 
 //vuex
 import Vuex from 'vuex';
@@ -12,6 +12,15 @@ import store from './store.js';
 import Vuetify from 'vuetify';
 import '@fortawesome/fontawesome-free/css/all.css'
 Vue.use(Vuetify)
+
+//Vue-Lodash
+// import VueLodash from 'vue-lodash'
+// const options = { name: 'lodash' }
+// Vue.use(VueLodash)
+
+//lodash
+import _ from 'lodash';
+// Object.defineProperty(Vue.prototype, '$_', { value: _ });
 
 const opts = {
     icons: {
@@ -39,20 +48,23 @@ const opts = {
         prev: 'fas fa-arrow-left',
         edit: 'fas fa-pen-square',
         googlemap: 'far fa-map',
-        closecross: 'fas fa-times'
+        closecross: 'fas fa-times',
+        xxx: 'fas fa-check'
       }
     }
 }
 
 import NavigationDrawer from './components/NavDrawer.vue';
 import GoogleMaps from './components/GoogleMap.vue';
+import FiveWeekQuestionare from './components/forms/FiveWeekQuestionare.vue';
 
 const app = new Vue({
     store,
     vuetify: new Vuetify(opts),
     components: {
         NavigationDrawer,
-        GoogleMaps
+        GoogleMaps,
+        FiveWeekQuestionare
     },
     el: '#app',
     methods: {
@@ -64,6 +76,14 @@ const app = new Vue({
         },
         showGoogleMapWindow: () => {
             store.commit('setMapDialogState', true)
+        },
+        showFiveWeekQuestionareNavDrawer: (boolean) => {
+            store.commit('setFiveWeekQuestionareDialog', boolean)
         }
+    },
+    mounted() {
+        window.addEventListener("load", () => {
+            document.querySelector('#loader').classList.add("loaded"); 
+        });
     }
 });

@@ -9,5 +9,5 @@
                         <v-icon right class="v-icon-y">$vuetify.icons.menu</v-icon>
                     </v-btn>
                 </v-app-bar>
-                <navigation-drawer/>
+            <navigation-drawer ben-profile-avatar="{{ asset('./images/ben_profile_pic.jpg') }}"/>
 </v-content>   

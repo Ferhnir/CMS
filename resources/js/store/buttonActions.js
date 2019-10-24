@@ -8,14 +8,14 @@ const state = {
         3: false
     },
     mapDialog: false,
-    // contactDialog: false,
+    fiveWeekQuestionareDialog: false,
 };
 
 const getters = {
     getNavDrawerState: (state) => state.navdrawer,
     getActiveAchiveCard: (state) => index => state.achiveCard[index],
     getMapDialogState: (state) => state.mapDialog,
-    // getContactDialogState: (state) => state.contactDialog,
+    getFiveWeekQuestionareDialog: (state) => state.fiveWeekQuestionareDialog,
 };
 
 const actions = {
@@ -28,16 +28,16 @@ const actions = {
     async setMapDialogState({ commit }, boolean) {
         commit('setMapDialogState', boolean)
     },
-    // async setContactDialogState({ commit }, boolean) {
-    //     commit('setContactDialogState', boolean)
-    // },
+    async setFiveWeekQuestionareDialog({ commit }, boolean) {
+        commit('setFiveWeekQuestionareDialog', boolean)
+    },
 };
 
 const mutations = {
     setNavDrawerState: (state, boolean) => (state.navdrawer = boolean),
     setActiveAchiveCard: (state, index) => (state.achiveCard[index] = !state.achiveCard[index]),
     setMapDialogState: (state, boolean) => (state.mapDialog = boolean),
-    // setContactDialogState: (state, boolean) => (state.contactDialog = boolean),
+    setFiveWeekQuestionareDialog: (state, boolean) => (state.fiveWeekQuestionareDialog = boolean),
 };
 
 export default {

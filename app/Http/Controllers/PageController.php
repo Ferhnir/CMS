@@ -8,6 +8,11 @@ class PageController extends Controller
 {
     public function show()
     {
+        //NAVIGATION
+        // $navigation = \App\Navigation::all();
+
+        //YourObjective
+        //
         return view('index', [
             'yourObjCards' => [
                 ['title' => 'become fit', 'icon' => 'fas fa-star'],

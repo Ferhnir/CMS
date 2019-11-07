@@ -3,27 +3,30 @@
 return [
     'admin' => [
         (object) array(
-            'name' => 'Pages',
-            'target' => 'route',
+            'title' => 'Pages',
             'icon' => 'mdi-content-copy',
             'icon_after' => false,
             'group' => [
                 (object) array(
                     'name' => 'Content',
-                    'target' => 'route',
+                    'target' => 'admin.pages.index',
                     'icon' => 'mdi-page-layout-body',
+                    'icon_after' => true
+                ),
+                (object) array(
+                    'name' => 'Add new page',
+                    'target' => 'admin.pages.create',
+                    'icon' => 'mdi-note-plus',
                     'icon_after' => true
                 )
             ],
-            'href' =>'admin.index.show'
         ),
         (object) array(
-            'name' => 'Users',
-            'target' => 'route',
+            'title' => 'Users',
             'icon' => 'mdi-account-group',
             'icon_after' => false,
-            'group' => false,
-            'href' => 'admin.index.show'
+            'group' => null,
+            'href' => 'admin.users.index'
         )
     ]    
 ];

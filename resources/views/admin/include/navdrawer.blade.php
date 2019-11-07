@@ -12,19 +12,31 @@
         'link' => true, 
         'icon' => 'mdi-home', 
         'title' => 'Home',
-        'href' => route('admin.index.show'),
+        'href' => route('admin.dashboard.index'),
         'icon_after' => false
       ]
     )
-    @foreach (config('menu.admin') as $item)       
-      @include((!empty($item->group) ? '_includes.lists.vlistgroup' : '_includes.lists.vlistitem'), 
-        [
-          'link' => !empty($item->group), 
-          'icon' => $item->icon, 
-          'title' => $item->name,
-          'icon_after' => $item->icon_after
-        ]
-      )
+    @foreach (config('menu.admin') as $item)
+      @if(empty($item->group))
+        @include('_includes.lists.vlistitem',
+          [
+            'link' => true,
+            'title' => $item->title,
+            'icon' => $item->icon,
+            'href' => route($item->href),
+            'icon_after' => $item->icon_after
+          ]
+        )       
+      @else
+        @include('_includes.lists.vlistgroup',
+          [
+            'title' => $item->title,
+            'icon' => $item->icon,
+            'icon_after' => $item->icon_after,
+            'items' => $item->group
+          ]
+        )
+      @endif
     @endforeach
   </v-list>
 </div>

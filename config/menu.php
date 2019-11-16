@@ -3,26 +3,26 @@
 return [
     'admin' => [
         (object) array(
-            'title' => 'Pages',
-            'icon' => 'mdi-content-copy',
+            'name' => 'Web content',
+            'icon'  => 'mdi-file-table-outline',
             'icon_after' => false,
             'group' => [
                 (object) array(
-                    'name' => 'Content',
-                    'target' => 'admin.pages.index',
-                    'icon' => 'mdi-page-layout-body',
-                    'icon_after' => true
+                    'name' => 'Pages',
+                    'icon' => 'mdi-content-copy',
+                    'href' => 'admin.pages.index',
+                    'icon_after' => false
                 ),
                 (object) array(
-                    'name' => 'Add new page',
-                    'target' => 'admin.pages.create',
-                    'icon' => 'mdi-note-plus',
-                    'icon_after' => true
-                )
-            ],
+                    'name' => 'Navdrawer',
+                    'icon' => 'mdi-menu',
+                    'href' => 'admin.pages.index',
+                    'icon_after' => false
+                ),
+            ]
         ),
         (object) array(
-            'title' => 'Users',
+            'name' => 'Users',
             'icon' => 'mdi-account-group',
             'icon_after' => false,
             'group' => null,

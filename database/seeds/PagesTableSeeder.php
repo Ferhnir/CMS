@@ -13,17 +13,72 @@ class PagesTableSeeder extends Seeder
     {
 
         $pages_array = [
-            ['nav_title' => null, 'html_id' => 'Intro', 'nav_order' => null, 'page_order' => 1],
-            ['nav_title' => 'Your objective', 'html_id' => 'YourObjective', 'nav_order' => 1, 'page_order' => 2],
-            ['nav_title' => 'Achive your goal', 'html_id' => 'AchiveYouGoal', 'nav_order' => 2, 'page_order' => 3],
-            ['nav_title' => 'Choose your pack', 'html_id' => 'ChooseYourPack', 'nav_order' => 3, 'page_order' => 4],
-            ['nav_title' => 'Pricing', 'html_id' => 'Pricing', 'nav_order' => 4, 'page_order' => 5],
-            ['nav_title' => 'Testimonials', 'html_id' => 'Testimonials', 'nav_order' => 5, 'page_order' => 6],
-            ['nav_title' => null, 'html_id' => 'AchiveYouGoal#extra', 'nav_order' => null, 'page_order' => 7],
-            ['nav_title' => 'Contact me', 'html_id' => 'ContactMe', 'nav_order' => 6, 'page_order' => 8],
-            ['nav_title' => null, 'html_id' => 'lockYourTime', 'nav_order' => null, 'page_order' => 9],
-            ['nav_title' => null, 'html_id' => 'Subscribe', 'nav_order' => null, 'page_order' => 10],
-            ['nav_title' => null, 'html_id' => 'Footer', 'nav_order' => null, 'page_order' => 11]
+            [
+                'name' => 'Intro page',
+                'html_tag' => 'Intro',
+                'page_order' => 1,
+                'active' => false
+            ],
+            [
+                'name' => 'Your objective', 
+                'html_tag' => 'YourObjective',
+                'page_order' => 2,
+                'active' => false
+            ],
+            [
+                'name' => 'Achive your goal', 
+                'html_tag' => 'AchiveYouGoal', 
+                'page_order' => 3,
+                'active' => false
+            ],
+            [
+                'name' => 'Choose your pack', 
+                'html_tag' => 'ChooseYourPack',
+                'page_order' => 4,
+                'active' => false
+            ],
+            [
+                'name' => 'Pricing', 
+                'html_tag' => 'Pricing',
+                'page_order' => 5,
+                'active' => false
+            ],
+            [
+                'name' => 'Testimonials', 
+                'html_tag' => 'Testimonials', 
+                'page_order' => 6,
+                'active' => false, 
+            ],
+            [
+                'name' => 'Achive You Goal (extra)', 
+                'html_tag' => 'AchiveYouGoal#extra', 
+                'nav_order' => 7, 
+                'active' => false 
+            ],
+            [
+                'name' => 'Contact me', 
+                'html_tag' => 'ContactMe',
+                'page_order' => 8,
+                'active' => false
+            ],
+            [
+                'name' => 'Lock your time', 
+                'html_tag' => 'lockYourTime',
+                'page_order' => 9,
+                'active' => false
+            ],
+            [
+                'name' => 'Subscribe', 
+                'html_tag' => 'Subscribe',
+                'page_order' => 10,
+                'false' => false
+            ],
+            [
+                'name' => 'Footer', 
+                'html_tag' => 'Footer', 
+                'page_order' => 11,
+                'false' => false
+            ]
         ];
 
         DB::table('pages')->insert($pages_array);

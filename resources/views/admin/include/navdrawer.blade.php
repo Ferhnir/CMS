@@ -21,7 +21,7 @@
         @include('_includes.lists.vlistitem',
           [
             'link' => true,
-            'title' => $item->title,
+            'title' => $item->name,
             'icon' => $item->icon,
             'href' => route($item->href),
             'icon_after' => $item->icon_after
@@ -30,7 +30,7 @@
       @else
         @include('_includes.lists.vlistgroup',
           [
-            'title' => $item->title,
+            'title' => $item->name,
             'icon' => $item->icon,
             'icon_after' => $item->icon_after,
             'items' => $item->group

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePagesTable extends Migration
+class CreateNavdrawerTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreatePagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('pages', function (Blueprint $table) {
-            $table->unsignedBigInteger('id')->autoIncrement();
-            $table->char('name');
-            $table->char('html_tag')->unique();
-            $table->integer('page_order')->nullable();
-            $table->boolean('active')->default(false);
+        Schema::create('navdrawer', function (Blueprint $table) {
+            $table->unsignedBigInteger('id')->autoIncrement();            
+            $table->char('nav_title')->nullable();
+            $table->char('icon')->nullable();
+            $table->integer('nav_order')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreatePagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pages');
+        Schema::dropIfExists('navdrawer');
     }
 }

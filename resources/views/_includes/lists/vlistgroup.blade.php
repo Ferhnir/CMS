@@ -11,7 +11,7 @@
         'link' => true, 
         'icon' => $el->icon, 
         'title' => $el->name,
-        'href' => route($el->target),
+        'href' => route($el->href),
         'icon_after' => true
         ]
     )        

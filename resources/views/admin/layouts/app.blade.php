@@ -11,9 +11,9 @@
     <v-app>
       <v-content style="height: 100vh;">                        
           @include('admin.include.navdrawer')
-        <div class="container-fluid" style="padding: 20px 20px 20px 280px;">
-          @yield('content')
-        </div>
+          <div class="container-fluid" style="padding: 20px 20px 20px 280px;">
+            @yield('content')
+          </div>
       </v-content>
     </v-app>
   </div>

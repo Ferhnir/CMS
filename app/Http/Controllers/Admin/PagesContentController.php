@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Page;
+
 class PagesContentController extends Controller
 {
     /**
@@ -14,7 +16,7 @@ class PagesContentController extends Controller
      */
     public function index()
     {
-        $pages = \App\Pages::all();
+        $pages = Page::orderBy('page_order')->get();
         return view('admin.pages.index', ['pages' => $pages]);
     }
 
@@ -47,11 +49,10 @@ class PagesContentController extends Controller
      */
     public function show($id)
     {
-        $page = \App\PageContent::find($id);
-        dd($page);
-        // return view('admin.pages.edit', [
-        //     'page' => $page
-        // ]);
+        $page = Page::find($id);
+        return view('admin.pages.edit', [
+            'page' => $page
+        ]);
     }
 
     /**
@@ -72,9 +73,60 @@ class PagesContentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $actual = Page::find($request->input('page_id'));
+
+        switch($request->input('target'))
+        {
+            case 'up':
+                $actual->page_order !== 0 ? $actual->page_order-- : '';
+            break;
+            
+            case 'down':
+                $actual->page_order++;
+            break;
+        }
+
+        
+        // dd($swaping);
+        // dd($swaping_page->page_order);
+        // $temp_swap_page = $swaping->page_order;
+        // $swaping->page_order = $actual->page_order;
+        // $actual->page_order = $temp_swap_page;
+
+        // dd($swaping->page_order, $actual->page_order);
+        // if($swaping->touch()){
+            $actual->touch();
+        // }
+
+        // $pages = Page::find([$swaping_page, $request->input('page_id')]);
+        
+        // dd($pages);
+
+        // $pages->map(function($pages) use ($pageID, $value){
+        //     if($pages->id == $pageID) {
+        //         return $pages->page_order = $pages->page_order - $value;
+        //     } else {
+        //         return $pages->page_order = $pages->page_order - ($value * -1); 
+        //     }
+        // });
+
+        // dd($pages);
+
+        // $pages->save();
+
+        // $pages->where('id',$request->input['page_id'])->update(['page_order'])
+        // $temp = (object) array(
+            // 'old' => $page->page_order, 
+            // 'actual' => $actual->page_order
+            // $a = $pages
+        // );
+
+        $pages = Page::orderBy('page_order')->get();
+        return redirect()->route('admin.pages.index',[
+            'pages' => $pages
+        ]);
     }
 
     /**

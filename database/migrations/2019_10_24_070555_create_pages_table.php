@@ -17,7 +17,7 @@ class CreatePagesTable extends Migration
             $table->unsignedBigInteger('id')->autoIncrement();
             $table->char('name');
             $table->char('html_tag')->unique();
-            $table->integer('page_order')->nullable();
+            $table->integer('order')->nullable();
             $table->boolean('active')->default(false);
             $table->timestamps();
         });

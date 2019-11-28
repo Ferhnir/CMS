@@ -16,8 +16,8 @@ class PagesContentController extends Controller
      */
     public function index()
     {
-        $pages = Page::orderBy('page_order')->get();
-        return view('admin.pages.index', ['pages' => $pages]);
+        $pages = Page::orderBy('order')->get();
+        return view('admin.webcontent.pages.index', ['pages' => $pages]);
     }
 
     /**
@@ -27,7 +27,7 @@ class PagesContentController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.create');
+        return view('admin.webcontent.pages.create');
     }
 
     /**
@@ -38,7 +38,20 @@ class PagesContentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'name' => 'required|min:8',
+        ]);
+    
+        $lastMaxOrder = Page::max('order');
+
+        $newPage            = new Page();
+        $newPage->name      = $request->input('name');
+        $newPage->html_tag  = str_replace(' ','',ucwords($request->input('name')));
+        $newPage->order     = $lastMaxOrder + 1;
+        $newPage->save();
+
+        return redirect()->route('admin.webcontent.pages.index');
+
     }
 
     /**
@@ -50,8 +63,10 @@ class PagesContentController extends Controller
     public function show($id)
     {
         $page = Page::find($id);
-        return view('admin.pages.edit', [
-            'page' => $page
+        $all_pages = Page::all();
+        return view('admin.webcontent.pages.edit', [
+            'page'          => $page,
+            'pages'         => $all_pages
         ]);
     }
 
@@ -73,58 +88,17 @@ class PagesContentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update($id, Request $request)
     {
-        $actual = Page::find($request->input('page_id'));
+        //NEED ADD VALIDATION
+        $page = Page::findOrFail($id);
 
-        switch($request->input('target'))
-        {
-            case 'up':
-                $actual->page_order !== 0 ? $actual->page_order-- : '';
-            break;
-            
-            case 'down':
-                $actual->page_order++;
-            break;
-        }
+        $input = $request->all();
+        $page->fill($input)->save();
 
-        
-        // dd($swaping);
-        // dd($swaping_page->page_order);
-        // $temp_swap_page = $swaping->page_order;
-        // $swaping->page_order = $actual->page_order;
-        // $actual->page_order = $temp_swap_page;
+        $pages = Page::orderBy('order')->get();
 
-        // dd($swaping->page_order, $actual->page_order);
-        // if($swaping->touch()){
-            $actual->touch();
-        // }
-
-        // $pages = Page::find([$swaping_page, $request->input('page_id')]);
-        
-        // dd($pages);
-
-        // $pages->map(function($pages) use ($pageID, $value){
-        //     if($pages->id == $pageID) {
-        //         return $pages->page_order = $pages->page_order - $value;
-        //     } else {
-        //         return $pages->page_order = $pages->page_order - ($value * -1); 
-        //     }
-        // });
-
-        // dd($pages);
-
-        // $pages->save();
-
-        // $pages->where('id',$request->input['page_id'])->update(['page_order'])
-        // $temp = (object) array(
-            // 'old' => $page->page_order, 
-            // 'actual' => $actual->page_order
-            // $a = $pages
-        // );
-
-        $pages = Page::orderBy('page_order')->get();
-        return redirect()->route('admin.pages.index',[
+        return redirect()->route('admin.webcontent.pages.index',[
             'pages' => $pages
         ]);
     }

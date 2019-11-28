@@ -15,10 +15,14 @@ class CreateNavdrawerTable extends Migration
     {
         Schema::create('navdrawer', function (Blueprint $table) {
             $table->unsignedBigInteger('id')->autoIncrement();            
-            $table->char('nav_title')->nullable();
+            $table->char('name')->unique();
             $table->char('icon')->nullable();
-            $table->integer('nav_order')->nullable();
+            $table->integer('order')->nullable();            
+            $table->boolean('active')->default(false);
+            $table->unsignedBigInteger('page_id')->nullable();
             $table->timestamps();
+
+            $table->foreign('page_id')->references('id')->on('pages')->onDelete('cascade');
         });
     }
 

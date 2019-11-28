@@ -16,37 +16,37 @@ class PagesTableSeeder extends Seeder
             [
                 'name' => 'Intro page',
                 'html_tag' => 'Intro',
-                'page_order' => 1,
+                'order' => 1,
                 'active' => false
             ],
             [
                 'name' => 'Your objective', 
                 'html_tag' => 'YourObjective',
-                'page_order' => 2,
+                'order' => 2,
                 'active' => false
             ],
             [
                 'name' => 'Achive your goal', 
                 'html_tag' => 'AchiveYouGoal', 
-                'page_order' => 3,
+                'order' => 3,
                 'active' => false
             ],
             [
                 'name' => 'Choose your pack', 
                 'html_tag' => 'ChooseYourPack',
-                'page_order' => 4,
+                'order' => 4,
                 'active' => false
             ],
             [
                 'name' => 'Pricing', 
                 'html_tag' => 'Pricing',
-                'page_order' => 5,
+                'order' => 5,
                 'active' => false
             ],
             [
                 'name' => 'Testimonials', 
                 'html_tag' => 'Testimonials', 
-                'page_order' => 6,
+                'order' => 6,
                 'active' => false, 
             ],
             [
@@ -58,25 +58,25 @@ class PagesTableSeeder extends Seeder
             [
                 'name' => 'Contact me', 
                 'html_tag' => 'ContactMe',
-                'page_order' => 8,
+                'order' => 8,
                 'active' => false
             ],
             [
                 'name' => 'Lock your time', 
                 'html_tag' => 'lockYourTime',
-                'page_order' => 9,
+                'order' => 9,
                 'active' => false
             ],
             [
                 'name' => 'Subscribe', 
                 'html_tag' => 'Subscribe',
-                'page_order' => 10,
+                'order' => 10,
                 'false' => false
             ],
             [
                 'name' => 'Footer', 
                 'html_tag' => 'Footer', 
-                'page_order' => 11,
+                'order' => 11,
                 'false' => false
             ]
         ];

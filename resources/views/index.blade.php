@@ -25,23 +25,31 @@
             </span>
         </div>
         <v-app id="app">
-            {{-- NAVBAR AND NAVDRAWER --}}
+            {{-- NAVBAR --}}
             @include('partials.navbar.navbar')
-            {{-- SUBPAGES --}}
-            @include('subpages.intro')
-            @include('subpages.yourObjective')
-            @include('subpages.achiveGoals')
-            @include('subpages.chooseYourPack')
-            @include('subpages.pricing')
-            @include('subpages.testimonials')
-            @include('subpages.customCoaching')
-            @include('subpages.contactMe')
-            @include('subpages.lockYourTime')
-            @include('subpages.getFitStayConnected')
+
+            {{-- ================================= --}}
+            {{-- GOING BE REPLACED WITH DYNAMIC GENERATED CONTENT --}}
+            {{-- ================================= --}}
+
+                    {{-- SUBPAGES --}}
+                    @include('subpages.intro')
+                    @include('subpages.yourObjective')
+                    @include('subpages.achiveGoals')
+                    @include('subpages.chooseYourPack')
+                    @include('subpages.pricing')
+                    @include('subpages.testimonials')
+                    @include('subpages.customCoaching')
+                    @include('subpages.contactMe')
+                    @include('subpages.lockYourTime')
+                    @include('subpages.getFitStayConnected')
+
+            {{-- ================================= --}}
+
             {{-- FOOTER --}}
             @include('partials.footer')
                        
-            
+
             
         </v-app>
         <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js"></script>

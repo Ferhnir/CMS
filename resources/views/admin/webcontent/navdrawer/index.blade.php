@@ -3,6 +3,12 @@
 @section('content')
     <p class="display-text-4">Navigation content managment</p>
     <hr />
+    <div class="gradient-buttons">
+        <a class="btn btn-success mb-3" href="{{ route('admin.webcontent.navdrawer.create') }}">
+            <icon class="mdi mdi-view-grid-plus-outline"></icon>
+            Add new navigation link
+        </a>
+    </div>
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -19,7 +25,9 @@
                 <td class="text-center">{{ $nav->id }}</td>
                 <td>{{ $nav->name }}</td>
                 <td class="text-left">
-                    #{{ $nav->page->name }}
+                    @if(!empty($nav->page->name))
+                        #{{ $nav->page->name }}
+                    @endif
                 </td>
                 <td class="text-center">
                     @include('admin._include.table.order-body', [

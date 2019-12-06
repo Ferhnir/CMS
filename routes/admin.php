@@ -14,11 +14,14 @@ Route::prefix('webcontent')->group( function() {
     Route::get('/pages/add', 'PagesContentController@create')->name('admin.webcontent.pages.create');
     Route::post('/pages/add', 'PagesContentController@store')->name('admin.webcontent.pages.store');
     Route::post('/pages/update/{id}', 'PagesContentController@update')->name('admin.webcontent.pages.update');
+    Route::post('/pages/delete/{id}', 'PagesContentController@destroy')->name('admin.webcontent.pages.delete');
 });
 
 Route::prefix('webcontent')->group(function() {
     Route::get('/navdrawer', 'NavdrawerController@index')->name('admin.webcontent.navdrawer.index');
     Route::post('/navdrawer/show/{id?}', 'NavdrawerController@show')->name('admin.webcontent.navdrawer.show');
     Route::post('/navdrawer/update/{id?}', 'NavdrawerController@update')->name('admin.webcontent.navdrawer.update');
+    Route::get('/navdrawer/add', 'NavdrawerController@create')->name('admin.webcontent.navdrawer.create');
+    Route::post('/navdrawer/add', 'NavdrawerController@store')->name('admin.webcontent.navdrawer.store');
 });
 Route::get('/users', 'DashboardController@show')->name('admin.users.index');

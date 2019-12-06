@@ -12,7 +12,7 @@ class NavdrawerController extends Controller
 {
     public function index()
     {        
-        $nav = Navdrawer::with('page')->whereNotNull('page_id')->get();
+        $nav = Navdrawer::with('page')->get();
 
         $pages = Page::select('id','name')->get();
 
@@ -31,6 +31,29 @@ class NavdrawerController extends Controller
             'nav'           => $nav,
             'pages'         => $pages
         ]);
+    }
+
+    public function create()
+    {
+        return view('admin.webcontent.navdrawer.create');
+    }
+
+    public function store(Request $request)
+    {
+        $validate = $request->validate([
+            'name' => 'required|min:8',
+        ]);
+    
+        $lastMaxOrder = Navdrawer::max('order');
+
+        $newNavEl            = new Navdrawer();
+        $newNavEl->name      = $request->input('name');
+        $newNavEl->order     = $lastMaxOrder + 1;
+
+        $newNavEl->save();
+
+        return redirect()->route('admin.webcontent.navdrawer.index');
+
     }
 
     public function update($id, Request $request)

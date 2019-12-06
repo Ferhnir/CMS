@@ -7,18 +7,18 @@
     <div class="col-lg-6">
         <div class="card">
         <div class="card-body">
-                <form id="pageCreateForm" action="{{ action('Admin\PagesContentController@store') }}" method="POST">
+                <form id="navCreateForm" action="{{ action('Admin\NavdrawerController@store') }}" method="POST">
                     @csrf
                     <div class="form-row">
                         <div class="col-md-12 p-2">
-                            <label for="pageName">Page name:</label>
+                            <label for="navName">Navigation element name:</label>
                             <input 
-                                id="pageName"
+                                id="navName"
                                 type="text" 
                                 class="form-control @error('name') is-invalid @enderror" 
                                 name="name" 
                                 aria-describedby="nameHelp" 
-                                placeholder="Enter page title"
+                                placeholder="Enter nav title"
                                 value="{{ old('name') }}" 
                             />
                             @error('name')

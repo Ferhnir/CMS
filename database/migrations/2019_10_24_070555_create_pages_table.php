@@ -19,6 +19,7 @@ class CreatePagesTable extends Migration
             $table->char('html_tag')->unique();
             $table->integer('order')->nullable();
             $table->boolean('active')->default(false);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

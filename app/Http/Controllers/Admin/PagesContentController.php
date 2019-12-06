@@ -90,7 +90,10 @@ class PagesContentController extends Controller
      */
     public function update($id, Request $request)
     {
-        //NEED ADD VALIDATION
+        $validate = $request->validate([
+            'name' => 'required|min:8',
+        ]);
+        
         $page = Page::findOrFail($id);
 
         $input = $request->all();
@@ -111,6 +114,13 @@ class PagesContentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $page = Page::find($id);
+
+        $page->delete();
+
+        $pages = Page::orderBy('order')->get();
+        return view('admin.webcontent.pages.index', [
+            'pages' => $pages
+            ]);
     }
 }

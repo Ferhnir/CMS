@@ -50,22 +50,21 @@
                     <form class="d-inline" id="form-page-id-{{ $page->id }}" action="{!! action('Admin\PagesContentController@show', ['id' => $page->id]) !!}" method="POST"> 
                         @include('admin._include.buttons.bttn', [
                             'type'          => 'submit',
-                            'css_class'     => 'btn-warning',
+                            'css_class'     => 'btn-light',
                             'name'          => 'edit',
                             'value'         => $page->id,
-                            'icon'          => 'mdi-file-edit-outline',
-                            'title'         => 'Edit'
+                            'icon'          => 'mdi-file-edit-outline'
                         ])                    
                     </form>
-                <a 
+                <button 
                     data-toggle="modal" 
                     data-id="{{ $page->id }}" 
                     data-name="{{ $page->name }}"
                     data-url="{{ route('admin.webcontent.pages.delete', ['id' => $page->id]) }}" 
                     title="Delete" 
-                    class="open-modal btn btn-danger btn-sm">
+                    class="confirm-delete-modal btn btn-light btn-sm">
                     Delete
-                </a>
+                </button>
                 </td>
             </tr>
             @endforeach
@@ -79,7 +78,10 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                    <p style="vertical-align: baseline;">
+                        <icon class="mdi mdi-trash-can-outline"></icon>
+                        <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                    </p>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -97,7 +99,7 @@
         </form>
     </div>
     <script>
-    $(document).on("click", ".open-modal", function () {
+    $(document).on("click", ".confirm-delete-modal", function () {
 
         var myElementId = $(this).data('id');
         var myElementName = $(this).data('name');

@@ -52,7 +52,7 @@
                     <form class="d-inline" id="form-nav-id-{{ $nav->id }}" action="{!! action('Admin\NavdrawerController@show', ['id' => $nav->id]) !!}" method="POST"> 
                         @include('admin._include.buttons.bttn', [
                             'type'          => 'submit',
-                            'css_class'     => 'btn-warning',
+                            'css_class'     => 'btn-light',
                             'name'          => 'edit',
                             'value'         => $nav->id,
                             'icon'          => 'mdi-file-edit-outline',
@@ -62,7 +62,7 @@
                     <form class="d-inline" id="form-nav-id-{{ $nav->id }}" action="{!! action('Admin\NavdrawerController@show', ['id' => $nav->id]) !!}" method="POST">
                         @include('admin._include.buttons.bttn', [
                             'type'          => 'submit',
-                            'css_class'     => 'btn-danger',
+                            'css_class'     => 'btn-light',
                             'name'          => 'delete',
                             'value'         => $nav->id,
                             'icon'          => 'mdi-delete',
